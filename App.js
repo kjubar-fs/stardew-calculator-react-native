@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 26 Oct 1985, 4:15:00 AM
- *  Last update: 5 Aug 2024, 7:23:19 PM
+ *  Last update: 5 Aug 2024, 7:36:31 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 // React Native/Expo components
@@ -22,40 +22,45 @@ const Tab = createBottomTabNavigator();
 export default function App() {
     return (
         <NavigationContainer>
-                <View style={styles.container}>
-                    <StatusBar style="auto" />
+            <View style={styles.container}>
+                <StatusBar style="auto" />
 
-                    <Tab.Navigator
-                        initialRouteName="HomeScreen"
-                        screenOptions={{
-                            headerShown: false,
+                {/* TODO: add icons and styling */}
+                <Tab.Navigator
+                    initialRouteName="HomeScreen"
+                    screenOptions={{
+                        headerShown: false,
+                    }}
+                    // no background on tabs, to allow bg image to show through
+                    sceneContainerStyle={{
+                        backgroundColor: "rgba(0, 0, 0, 0)",
+                    }}
+                >
+                    <Tab.Screen
+                        name="InventoryScreen"
+                        component={InventoryScreen}
+                        options={{
+                            title: "Inventory",
                         }}
-                    >
-                        <Tab.Screen
-                            name="InventoryScreen"
-                            component={InventoryScreen}
-                            options={{
-                                title: "Inventory",
-                            }}
-                        />
+                    />
 
-                        <Tab.Screen
-                            name="HomeScreen"
-                            component={HomeScreen}
-                            options={{
-                                title: "Home",
-                            }}
-                        />
-                        
-                        <Tab.Screen
-                            name="CalculatorScreen"
-                            component={CalculatorScreen}
-                            options={{
-                                title: "Calculator",
-                            }}
-                        />
-                    </Tab.Navigator>
-                </View>
+                    <Tab.Screen
+                        name="HomeScreen"
+                        component={HomeScreen}
+                        options={{
+                            title: "Home",
+                        }}
+                    />
+                    
+                    <Tab.Screen
+                        name="CalculatorScreen"
+                        component={CalculatorScreen}
+                        options={{
+                            title: "Calculator",
+                        }}
+                    />
+                </Tab.Navigator>
+            </View>
         </NavigationContainer>
     );
 }

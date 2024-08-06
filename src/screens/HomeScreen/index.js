@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:08:18 PM
- *  Last update: 6 Aug 2024, 1:15:13 PM
+ *  Last update: 6 Aug 2024, 1:22:00 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { View, Text, Image } from "react-native";
@@ -12,19 +12,13 @@ import styles from "./styles";
 export default function HomeScreen() {
     return (
         <View
-            style={{
-                ...globalStyles.navContainer,
-                ...styles.container
-            }}
+            style={[ globalStyles.navContainer, styles.container ]}
         >
             <View style={styles.titleContainer}>
                 <Image
                     source={require("../../../assets/logo.png")}
                     resizeMode="contain"
-                    style={{
-                        width: "100%",
-                        height: 150,
-                    }}
+                    style={styles.logo}
                 />
                 <Text style={styles.subtitle}>Calculator</Text>
             </View>

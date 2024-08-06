@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 6:52:06 PM
- *  Last update: 5 Aug 2024, 8:33:32 PM
+ *  Last update: 6 Aug 2024, 10:39:59 AM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { StyleSheet, Platform } from "react-native";
@@ -12,7 +12,6 @@ export const ITEM_PADDING = 20;
 
 export default StyleSheet.create({
     container: {
-        backgroundColor: "#7BF",
         // account for notch and camera
         paddingTop: Platform.OS === "ios" ? 60 : 45,
         flex: 1,

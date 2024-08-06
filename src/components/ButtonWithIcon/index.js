@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 6 Aug 2024, 1:31:00 PM
- *  Last update: 6 Aug 2024, 2:30:48 PM
+ *  Last update: 6 Aug 2024, 2:33:22 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { Pressable, Image, Text } from "react-native";
@@ -35,15 +35,20 @@ export default function ButtonWithIcon(props) {
                 style,
             ]}
         >
-            <Image
-                // TODO: implement image support using https://stackoverflow.com/questions/44991669/react-native-require-with-dynamic-string
-                source={undefined}
-                // default to an icon size of 32 if not provided
-                style={{
-                    width: iconSize || 32,
-                    height: iconSize || 32,
-                }}
-            />
+            
+            {
+                // conditionall render the image if src is provided
+                src &&
+                <Image
+                    // TODO: implement image support using https://stackoverflow.com/questions/44991669/react-native-require-with-dynamic-string
+                    source={undefined}
+                    // default to an icon size of 32 if not provided
+                    style={{
+                        width: iconSize || 32,
+                        height: iconSize || 32,
+                    }}
+                />
+            }
             <Text style={styles.caption}>{caption}</Text>
         </Pressable>
     );

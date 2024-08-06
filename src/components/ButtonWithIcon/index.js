@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 6 Aug 2024, 1:31:00 PM
- *  Last update: 6 Aug 2024, 2:51:17 PM
+ *  Last update: 6 Aug 2024, 3:00:39 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { Pressable, Image, Text } from "react-native";
@@ -30,7 +30,7 @@ export default function ButtonWithIcon(props) {
             {...buttonProps}
             // set custom styles, overriding with provided styles
             // set dynamically based on pressed state
-            style={({pressed}) => {
+            style={({ pressed }) => {
                 const stylesAry = [
                     styles.button,
                     { flexDirection: direction || "row" },
@@ -40,7 +40,6 @@ export default function ButtonWithIcon(props) {
                 return stylesAry;
             }}
         >
-            
             {
                 // conditionally render the image if src is provided
                 src &&

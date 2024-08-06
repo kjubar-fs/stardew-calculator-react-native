@@ -1,13 +1,14 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:08:18 PM
- *  Last update: 6 Aug 2024, 1:28:42 PM
+ *  Last update: 6 Aug 2024, 1:35:42 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { View, Text, Image } from "react-native";
 
 import globalStyles from "../../styles/structure";
 import styles from "./styles";
+import ButtonWithIcon from "../../components/ButtonWithIcon";
 
 export default function HomeScreen() {
     return (
@@ -42,7 +43,9 @@ export default function HomeScreen() {
                 </View>
             </View>
             <View style={styles.bottomContainer}>
-                <Text>Test</Text>
+                <ButtonWithIcon onPress={() => console.log("pressed")}>
+                    <Text>Test</Text>
+                </ButtonWithIcon>
             </View>
         </View>
     );

@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 6:52:06 PM
- *  Last update: 6 Aug 2024, 1:45:52 PM
+ *  Last update: 6 Aug 2024, 2:36:48 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { StyleSheet, Platform } from "react-native";
@@ -61,5 +61,13 @@ export default StyleSheet.create({
         borderWidth: borderWidth,
         borderRadius,
         padding: cardPadding,
+        elevation: 4,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowRadius: 3,
+        shadowOpacity: 0.25,
     },
 });

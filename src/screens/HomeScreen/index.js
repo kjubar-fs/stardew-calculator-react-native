@@ -1,17 +1,50 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:08:18 PM
- *  Last update: 5 Aug 2024, 8:34:57 PM
+ *  Last update: 6 Aug 2024, 12:55:40 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 
 import globalStyles from "../../styles/structure";
+import styles from "./styles";
 
 export default function HomeScreen() {
     return (
-        <View style={globalStyles.navContainer}>
-            <Text>Hello, Stardew!</Text>
+        <View
+            style={{
+                ...globalStyles.navContainer,
+                ...styles.container
+            }}
+        >
+            <View style={styles.titleContainer}>
+                <Image
+                    source={require("../../../assets/logo.png")}
+                    resizeMode="contain"
+                    style={{
+                        width: "100%",
+                        height: 150,
+                    }}
+                />
+                <Text style={styles.subtitle}>Calculator</Text>
+            </View>
+
+            <View style={styles.introContainer}>
+                <Text style={{ ...styles.introText, ...globalStyles.titleH1 }}>
+                    Welcome!
+                </Text>
+                <View style={styles.introBodyContainer}>
+                    <Text style={{ ...globalStyles.bodyText, ...styles.introText }}>
+                        This tool is a revenue calculator for Stardew Valley.
+                    </Text>
+                    <Text style={{ ...globalStyles.bodyText, ...styles.introText }}>
+                        Get started by heading to the items tab and select some items to add to the calculator.
+                    </Text>
+                    <Text style={{ ...globalStyles.bodyText, ...styles.introText }}>
+                        Then, switch to the calculator tab and modify the quantities to see your revenue totals, broken down by day and season!
+                    </Text>
+                </View>
+            </View>
         </View>
     );
 }

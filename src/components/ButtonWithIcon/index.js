@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 6 Aug 2024, 1:31:00 PM
- *  Last update: 6 Aug 2024, 2:33:22 PM
+ *  Last update: 6 Aug 2024, 2:41:50 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { Pressable, Image, Text } from "react-native";
@@ -18,7 +18,7 @@ export default function ButtonWithIcon(props) {
     // properties not related to the Pressable
     // this way it can be used like a normal Pressable with extra features
     const {
-        children, style, direction,
+        style, direction,
         src, iconSize,
         caption,
         ...buttonProps
@@ -37,7 +37,7 @@ export default function ButtonWithIcon(props) {
         >
             
             {
-                // conditionall render the image if src is provided
+                // conditionally render the image if src is provided
                 src &&
                 <Image
                     // TODO: implement image support using https://stackoverflow.com/questions/44991669/react-native-require-with-dynamic-string

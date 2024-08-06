@@ -1,15 +1,11 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 6 Aug 2024, 12:28:21 PM
- *  Last update: 6 Aug 2024, 1:43:41 PM
+ *  Last update: 6 Aug 2024, 1:46:40 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { StyleSheet } from "react-native";
-import {
-    lightColor, darkColor,
-    gapPadding, cardPadding,
-    borderRadius, borderWidth
-} from "../../styles/structure";
+import globalStyles, { lightColor, gapPadding } from "../../styles/structure";
 
 export default StyleSheet.create({
     outerContainer: {
@@ -42,11 +38,7 @@ export default StyleSheet.create({
     },
 
     introContainer: {
-        backgroundColor: lightColor,
-        borderRadius,
-        padding: cardPadding,
-        borderColor: darkColor,
-        borderWidth,
+        ...globalStyles.cardWithBorder,
         gap: 10,
     },
 

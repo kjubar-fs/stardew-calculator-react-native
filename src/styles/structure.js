@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 6:52:06 PM
- *  Last update: 6 Aug 2024, 1:15:49 PM
+ *  Last update: 6 Aug 2024, 1:45:52 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { StyleSheet, Platform } from "react-native";
@@ -53,5 +53,13 @@ export default StyleSheet.create({
     titleH3: {
         fontWeight: "bold",
         fontSize: 18,
+    },
+
+    cardWithBorder: {
+        backgroundColor: lightColor,
+        borderColor: darkColor,
+        borderWidth: borderWidth,
+        borderRadius,
+        padding: cardPadding,
     },
 });

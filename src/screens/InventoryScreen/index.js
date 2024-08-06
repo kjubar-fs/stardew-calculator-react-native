@@ -1,15 +1,41 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:08:21 PM
- *  Last update: 5 Aug 2024, 7:21:02 PM
+ *  Last update: 5 Aug 2024, 8:08:45 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
-import { View, Text } from "react-native";
+// navigation
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import CategoryScreen from "../CategoryScreen";
+import ItemListScreen from "../ItemListScreen";
+import ItemDetailScreen from "../ItemDetailScreen";
+
+const Stack = createNativeStackNavigator();
 
 export default function InventoryScreen() {
     return (
-        <View>
-            <Text>Inventory screen goes here.</Text>
-        </View>
+        // TODO: figure out how to make components hide during transition
+        //       might be a hacky way, or set the background image on the nav
+        //       instead of underneath the nav
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Categories"
+                component={CategoryScreen}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            
+            <Stack.Screen
+                name="ItemList"
+                component={ItemListScreen}
+            />
+
+            <Stack.Screen
+                name="ItemDetail"
+                component={ItemDetailScreen}
+            />
+        </Stack.Navigator>
     );
 }

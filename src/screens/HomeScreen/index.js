@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:08:18 PM
- *  Last update: 6 Aug 2024, 1:35:42 PM
+ *  Last update: 6 Aug 2024, 2:07:49 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { View, Text, Image } from "react-native";
@@ -43,9 +43,12 @@ export default function HomeScreen() {
                 </View>
             </View>
             <View style={styles.bottomContainer}>
-                <ButtonWithIcon onPress={() => console.log("pressed")}>
-                    <Text>Test</Text>
-                </ButtonWithIcon>
+                <ButtonWithIcon
+                    onPress={() => console.log("pressed")}
+                    caption="Test"
+                    iconSize={32}
+                    src="../../../assets/logo.png"
+                />
             </View>
         </View>
     );

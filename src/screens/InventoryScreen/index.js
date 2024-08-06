@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:08:21 PM
- *  Last update: 5 Aug 2024, 8:08:45 PM
+ *  Last update: 5 Aug 2024, 8:19:53 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 // navigation
@@ -30,11 +30,22 @@ export default function InventoryScreen() {
             <Stack.Screen
                 name="ItemList"
                 component={ItemListScreen}
+                // use a function taking in route to set title from params
+                options={({ route }) => (
+                    {
+                        title: route.params.category,
+                    }
+                )}
             />
 
             <Stack.Screen
                 name="ItemDetail"
                 component={ItemDetailScreen}
+                options={({ route }) => (
+                    {
+                        title: route.params.itemName,
+                    }
+                )}
             />
         </Stack.Navigator>
     );

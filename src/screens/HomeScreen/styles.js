@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 6 Aug 2024, 12:28:21 PM
- *  Last update: 6 Aug 2024, 1:28:34 PM
+ *  Last update: 6 Aug 2024, 1:43:41 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { StyleSheet } from "react-native";
@@ -55,7 +55,6 @@ export default StyleSheet.create({
     },
 
     introText: {
-        fontSize: 16,
         textAlign: "center",
     },
 });

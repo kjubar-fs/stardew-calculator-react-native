@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 26 Oct 1985, 4:15:00 AM
- *  Last update: 6 Aug 2024, 1:17:12 PM
+ *  Last update: 6 Aug 2024, 1:43:34 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 // React Native/Expo components
@@ -39,6 +39,7 @@ const navTheme = {
 setDefaultProps(Text, {
     style: {
         color: darkColor,
+        fontSize: 16,
     },
 });
 

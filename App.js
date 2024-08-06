@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 26 Oct 1985, 4:15:00 AM
- *  Last update: 6 Aug 2024, 10:43:35 AM
+ *  Last update: 6 Aug 2024, 11:10:09 AM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 // React Native/Expo components
@@ -17,6 +17,7 @@ import styles from "./src/styles/structure";
 import InventoryScreen from "./src/screens/InventoryScreen";
 import HomeScreen from "./src/screens/HomeScreen";
 import CalculatorScreen from "./src/screens/CalculatorScreen";
+import TabBar from "./src/components/TabBar";
 
 const Tab = createBottomTabNavigator();
 
@@ -45,9 +46,11 @@ export default function App() {
                         {/* TODO: add icons and styling */}
                         <Tab.Navigator
                             initialRouteName="HomeScreen"
+                            backBehavior="initialRoute"
                             screenOptions={{
                                 headerShown: false,
                             }}
+                            tabBar={(props) => <TabBar {...props}/>}
                         >
                             <Tab.Screen
                                 name="InventoryScreen"

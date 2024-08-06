@@ -1,11 +1,11 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 26 Oct 1985, 4:15:00 AM
- *  Last update: 5 Aug 2024, 8:00:21 PM
+ *  Last update: 5 Aug 2024, 8:12:45 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 // React Native/Expo components
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
 // navigation

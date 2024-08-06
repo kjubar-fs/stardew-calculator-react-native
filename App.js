@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 26 Oct 1985, 4:15:00 AM
- *  Last update: 5 Aug 2024, 7:36:31 PM
+ *  Last update: 5 Aug 2024, 8:00:21 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 // React Native/Expo components
@@ -9,19 +9,31 @@ import { Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
 // navigation
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import styles from "./src/styles/structure";
+
 import InventoryScreen from "./src/screens/InventoryScreen";
 import HomeScreen from "./src/screens/HomeScreen";
 import CalculatorScreen from "./src/screens/CalculatorScreen";
 
 const Tab = createBottomTabNavigator();
 
+// create a theme for navigation in the app
+// uses defaults except background color, which should be transparent,
+// as the root has a background image we want on every screen
+const navTheme = {
+    ...DefaultTheme,
+    colors: {
+        ...DefaultTheme.colors,
+        background: "transparent",
+    },
+}
+
 export default function App() {
     return (
-        <NavigationContainer>
+        <NavigationContainer theme={navTheme}>
             <View style={styles.container}>
                 <StatusBar style="auto" />
 
@@ -30,10 +42,6 @@ export default function App() {
                     initialRouteName="HomeScreen"
                     screenOptions={{
                         headerShown: false,
-                    }}
-                    // no background on tabs, to allow bg image to show through
-                    sceneContainerStyle={{
-                        backgroundColor: "rgba(0, 0, 0, 0)",
                     }}
                 >
                     <Tab.Screen

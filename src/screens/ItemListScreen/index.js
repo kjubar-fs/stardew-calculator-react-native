@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:43:21 PM
- *  Last update: 5 Aug 2024, 8:38:24 PM
+ *  Last update: 5 Aug 2024, 8:41:22 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { View, Text, TouchableHighlight } from "react-native";
@@ -10,7 +10,7 @@ import globalStyles from "../../styles/structure";
 
 export default function ItemListScreen({ navigation }) {
     return (
-        <View style={globalStyles.container}>
+        <View style={globalStyles.navContainer}>
             <Text>Item list screen goes here.</Text>
             <TouchableHighlight
                 onPress={() => navigation.navigate("ItemDetail", { itemName: "Parsnip", })}

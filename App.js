@@ -1,18 +1,21 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 26 Oct 1985, 4:15:00 AM
- *  Last update: 6 Aug 2024, 11:10:09 AM
+ *  Last update: 6 Aug 2024, 1:13:36 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 // React Native/Expo components
-import { ImageBackground, View } from "react-native";
+import { ImageBackground, View, Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
 // navigation
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import styles from "./src/styles/structure";
+// default component props
+import setDefaultProps from 'react-native-simple-default-props'
+
+import styles, { darkColor } from "./src/styles/structure";
 
 import InventoryScreen from "./src/screens/InventoryScreen";
 import HomeScreen from "./src/screens/HomeScreen";
@@ -31,6 +34,13 @@ const navTheme = {
         background: "transparent",
     },
 }
+
+// set default styles for some components
+setDefaultProps(Text, {
+    style: {
+        color: darkColor,
+    },
+});
 
 export default function App() {
     return (

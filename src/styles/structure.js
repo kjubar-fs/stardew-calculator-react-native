@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 6:52:06 PM
- *  Last update: 6 Aug 2024, 12:47:35 PM
+ *  Last update: 6 Aug 2024, 1:15:49 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { StyleSheet, Platform } from "react-native";
@@ -22,11 +22,6 @@ export const cardPadding = 15;
 export const borderRadius = 15;
 export const borderWidth = 3;
 
-const baseTitleStyle = {
-    fontWeight: "bold",
-    color: darkColor,
-}
-
 export default StyleSheet.create({
     // app component styles
     bgImage: {
@@ -46,21 +41,17 @@ export default StyleSheet.create({
     },
 
     titleH1: {
-        ...baseTitleStyle,
+        fontWeight: "bold",
         fontSize: 24,
     },
 
     titleH2: {
-        ...baseTitleStyle,
+        fontWeight: "bold",
         fontSize: 21,
     },
 
     titleH3: {
-        ...baseTitleStyle,
+        fontWeight: "bold",
         fontSize: 18,
-    },
-
-    bodyText: {
-        color: darkColor,
     },
 });

@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 26 Oct 1985, 4:15:00 AM
- *  Last update: 6 Aug 2024, 10:38:28 AM
+ *  Last update: 6 Aug 2024, 10:43:35 AM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 // React Native/Expo components
@@ -37,7 +37,7 @@ export default function App() {
             <ImageBackground
                 source={require("./assets/background.png")}
                 resizeMode="cover"
-                style={{ flex: 1 }}
+                style={styles.bgImage}
             >
                 <View style={styles.container}>
                         <StatusBar style="auto" />

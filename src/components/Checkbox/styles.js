@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 7 Aug 2024, 12:41:01 PM
- *  Last update: 7 Aug 2024, 12:57:45 PM
+ *  Last update: 7 Aug 2024, 1:15:51 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { StyleSheet } from "react-native";
@@ -22,5 +22,9 @@ export default StyleSheet.create({
         backgroundColor: "#FFF",
         alignItems: "center",
         justifyContent: "center",
+    },
+
+    caption: {
+        flexShrink: 1,
     },
 });

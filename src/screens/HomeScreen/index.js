@@ -1,16 +1,24 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:08:18 PM
- *  Last update: 6 Aug 2024, 2:33:25 PM
+ *  Last update: 7 Aug 2024, 12:29:17 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, Modal } from "react-native";
 
 import globalStyles from "../../styles/structure";
 import styles from "./styles";
 import ButtonWithIcon from "../../components/ButtonWithIcon";
+import { useState } from "react";
+import SettingsModal from "../../components/SettingsModal";
 
 export default function HomeScreen() {
+    const [showSettings, setShowSettings] = useState(false);
+
+    const toggleSettingsModal = () => {
+        setShowSettings(!showSettings);
+    };
+
     return (
         <View
             style={[ globalStyles.navContainer, styles.outerContainer ]}
@@ -42,14 +50,17 @@ export default function HomeScreen() {
                     </View>
                 </View>
             </View>
+
             <View style={styles.bottomContainer}>
                 <ButtonWithIcon
-                    onPress={() => console.log("pressed")}
-                    caption="Test"
+                    onPress={toggleSettingsModal}
+                    caption="Settings"
                     iconSize={32}
                     // src="../../../assets/logo.png"
                 />
             </View>
+
+            <SettingsModal shown={showSettings} onClose={toggleSettingsModal} />
         </View>
     );
 }

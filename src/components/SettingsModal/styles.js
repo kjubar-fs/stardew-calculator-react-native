@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 7 Aug 2024, 12:29:55 PM
- *  Last update: 7 Aug 2024, 1:15:42 PM
+ *  Last update: 7 Aug 2024, 5:19:27 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { StyleSheet } from "react-native";
@@ -28,5 +28,12 @@ export default StyleSheet.create({
 
     checkbox: {
         width: "50%",
+    },
+
+    close: {
+        position: "absolute",
+        top: 10,
+        right: 10,
+        borderRadius: 5,
     },
 });

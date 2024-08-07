@@ -1,15 +1,16 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 7 Aug 2024, 12:27:33 PM
- *  Last update: 7 Aug 2024, 4:42:22 PM
+ *  Last update: 7 Aug 2024, 5:19:15 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
-import { Modal, View, Text } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
+import { Modal, View, Text, TouchableHighlight } from "react-native";
 
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
+import { useDispatch, useSelector } from "react-redux";
 import * as settings from "../../data/state/settingsSlice";
 
-import ButtonWithIcon from "../ButtonWithIcon";
 import Checkbox from "../Checkbox";
 
 import globalStyles from "../../styles/structure";
@@ -102,12 +103,14 @@ export default function SettingsModal({ shown, onClose }) {
                             }}
                         />
                     </View>
-                    
-                    {/* TODO: make this a floating X button in the top right */}
-                    <ButtonWithIcon
-                        caption="Close"
+
+                    <TouchableHighlight
+                        style={styles.close}
                         onPress={onClose}
-                    />
+                        underlayColor="#FFE395"
+                    >
+                        <MaterialIcons name="close" size={24} color="#C00" />
+                    </TouchableHighlight>
                 </View>
             </View>
         </Modal>

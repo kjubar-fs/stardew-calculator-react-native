@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 26 Oct 1985, 4:15:00 AM
- *  Last update: 7 Aug 2024, 4:19:28 PM
+ *  Last update: 7 Aug 2024, 4:42:42 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 // React Native/Expo components
@@ -17,7 +17,7 @@ import setDefaultProps from 'react-native-simple-default-props'
 
 // Redux
 import { Provider } from "react-redux";
-import store from "./src/redux/store";
+import store from "./src/data/state/store";
 
 import styles, { darkColor } from "./src/styles/structure";
 

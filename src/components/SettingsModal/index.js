@@ -1,13 +1,13 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 7 Aug 2024, 12:27:33 PM
- *  Last update: 7 Aug 2024, 4:34:01 PM
+ *  Last update: 7 Aug 2024, 4:42:22 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { Modal, View, Text } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
-import * as settings from "../../redux/settingsSlice";
+import * as settings from "../../data/state/settingsSlice";
 
 import ButtonWithIcon from "../ButtonWithIcon";
 import Checkbox from "../Checkbox";

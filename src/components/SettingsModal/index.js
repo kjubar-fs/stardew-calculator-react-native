@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 7 Aug 2024, 12:27:33 PM
- *  Last update: 7 Aug 2024, 5:19:15 PM
+ *  Last update: 7 Aug 2024, 6:14:15 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { Modal, View, Text, TouchableHighlight } from "react-native";
@@ -17,14 +17,14 @@ import globalStyles from "../../styles/structure";
 import styles from "./styles";
 
 export default function SettingsModal({ shown, onClose }) {
-    const rancherEnabled = useSelector((state) => state.settings.professions.rancher);
-    const gemologistEnabled = useSelector((state) => state.settings.professions.gemologist);
-    const tillerEnabled = useSelector((state) => state.settings.professions.tiller);
-    const blacksmithEnabled = useSelector((state) => state.settings.professions.blacksmith);
-    const artisanEnabled = useSelector((state) => state.settings.professions.artisan);
-    const fisherEnabled = useSelector((state) => state.settings.professions.fisher);
-    const tapperEnabled = useSelector((state) => state.settings.professions.tapper);
-    const anglerEnabled = useSelector((state) => state.settings.professions.angler);
+    const rancherEnabled = useSelector((state) => state.settings.settings.professions.rancher);
+    const gemologistEnabled = useSelector((state) => state.settings.settings.professions.gemologist);
+    const tillerEnabled = useSelector((state) => state.settings.settings.professions.tiller);
+    const blacksmithEnabled = useSelector((state) => state.settings.settings.professions.blacksmith);
+    const artisanEnabled = useSelector((state) => state.settings.settings.professions.artisan);
+    const fisherEnabled = useSelector((state) => state.settings.settings.professions.fisher);
+    const tapperEnabled = useSelector((state) => state.settings.settings.professions.tapper);
+    const anglerEnabled = useSelector((state) => state.settings.settings.professions.angler);
     const dispatch = useDispatch();
 
     return (

@@ -1,12 +1,13 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 26 Oct 1985, 4:15:00 AM
- *  Last update: 7 Aug 2024, 4:42:42 PM
+ *  Last update: 7 Aug 2024, 6:05:45 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 // React Native/Expo components
 import { ImageBackground, View, Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import * as SplashScreen from "expo-splash-screen";
 
 // navigation
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
@@ -21,10 +22,13 @@ import store from "./src/data/state/store";
 
 import styles, { darkColor } from "./src/styles/structure";
 
+import AppLoader from "./src/components/AppLoader";
 import InventoryScreen from "./src/screens/InventoryScreen";
 import HomeScreen from "./src/screens/HomeScreen";
 import CalculatorScreen from "./src/screens/CalculatorScreen";
 import TabBar from "./src/components/TabBar";
+
+SplashScreen.preventAutoHideAsync();
 
 const Tab = createBottomTabNavigator();
 
@@ -50,6 +54,7 @@ setDefaultProps(Text, {
 export default function App() {
     return (
         <Provider store={store}>
+        <AppLoader />
         <NavigationContainer theme={navTheme}>
         
         <ImageBackground

@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 6:52:06 PM
- *  Last update: 6 Aug 2024, 2:36:48 PM
+ *  Last update: 7 Aug 2024, 12:32:49 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { StyleSheet, Platform } from "react-native";
@@ -14,6 +14,7 @@ export const midLightColor = "#DC7B05";
 export const lightColor = "#FFD284";
 
 // sizing, padding, and margin
+export const safeAreaPadding = Platform.OS === "ios" ? 60 : 45
 export const screenPadding = 30;
 export const gapPadding = 20;
 export const cardPadding = 15;
@@ -30,7 +31,7 @@ export default StyleSheet.create({
 
     container: {
         // account for notch and camera
-        paddingTop: Platform.OS === "ios" ? 60 : 45,
+        paddingTop: safeAreaPadding,
         flex: 1,
         alignItems: "stretch",
     },

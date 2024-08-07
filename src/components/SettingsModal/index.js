@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 7 Aug 2024, 12:27:33 PM
- *  Last update: 7 Aug 2024, 12:37:21 PM
+ *  Last update: 7 Aug 2024, 12:40:18 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { Modal, View, Text } from "react-native";
@@ -22,6 +22,7 @@ export default function SettingsModal({ shown, onClose }) {
 
                     <Text style={globalStyles.titleH2}>Professions</Text>
                     
+                    {/* TODO: make this a floating X button in the top right */}
                     <ButtonWithIcon
                         caption="Close"
                         onPress={onClose}

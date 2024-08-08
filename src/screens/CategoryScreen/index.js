@@ -1,10 +1,10 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:42:58 PM
- *  Last update: 8 Aug 2024, 5:27:56 PM
+ *  Last update: 8 Aug 2024, 5:31:31 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
-import { ScrollView, Text, TouchableHighlight } from "react-native";
+import { ScrollView } from "react-native";
 
 import { useSelector } from "react-redux";
 
@@ -21,7 +21,7 @@ export default function CategoryScreen({ navigation }) {
             {categoryList.map((category) => (
                 <ButtonWithIcon
                     key={category.id}
-                    onPress={() => navigation.navigate("ItemList", { category: category.displayName, })}
+                    onPress={() => navigation.navigate("ItemList", { category })}
                     caption={category.displayName}
                 />
             ))}

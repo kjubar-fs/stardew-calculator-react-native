@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:08:21 PM
- *  Last update: 5 Aug 2024, 8:19:53 PM
+ *  Last update: 8 Aug 2024, 5:33:00 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 // navigation
@@ -33,7 +33,7 @@ export default function InventoryScreen() {
                 // use a function taking in route to set title from params
                 options={({ route }) => (
                     {
-                        title: route.params.category,
+                        title: route.params.category.displayName,
                     }
                 )}
             />

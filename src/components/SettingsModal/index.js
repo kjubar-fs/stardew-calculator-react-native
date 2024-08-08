@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 7 Aug 2024, 12:27:33 PM
- *  Last update: 8 Aug 2024, 1:21:02 PM
+ *  Last update: 8 Aug 2024, 1:58:48 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { Modal, View, Text, TouchableHighlight } from "react-native";
@@ -9,7 +9,8 @@ import { Modal, View, Text, TouchableHighlight } from "react-native";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 import { useDispatch, useSelector } from "react-redux";
-import * as settings from "../../data/state/settingsSlice";
+
+import { setProfessionSetting } from "../../data";
 
 import Checkbox from "../Checkbox";
 
@@ -27,6 +28,9 @@ export default function SettingsModal({ shown, onClose }) {
     const anglerEnabled = useSelector((state) => state.settings.professions.angler);
     const dispatch = useDispatch();
 
+    // TODO: replace with user ID from state
+    const userId = "" //useSelector((state) => state.settings.userId);
+
     return (
         <Modal
             visible={shown}
@@ -43,7 +47,7 @@ export default function SettingsModal({ shown, onClose }) {
                             caption="Rancher"
                             initialValue={rancherEnabled}
                             onChange={() => {
-                                dispatch(settings.toggleRancher());
+                                setProfessionSetting(userId, "rancher", !rancherEnabled, dispatch);
                             }}
                         />
                         <Checkbox
@@ -51,7 +55,7 @@ export default function SettingsModal({ shown, onClose }) {
                             caption="Gemologist"
                             initialValue={gemologistEnabled}
                             onChange={() => {
-                                dispatch(settings.toggleGemologist());
+                                setProfessionSetting(userId, "gemologist", !gemologistEnabled, dispatch);
                             }}
                         />
                         <Checkbox
@@ -59,7 +63,7 @@ export default function SettingsModal({ shown, onClose }) {
                             caption="Tiller"
                             initialValue={tillerEnabled}
                             onChange={() => {
-                                dispatch(settings.toggleTiller());
+                                setProfessionSetting(userId, "tiller", !tillerEnabled, dispatch);
                             }}
                         />
                         <Checkbox
@@ -67,7 +71,7 @@ export default function SettingsModal({ shown, onClose }) {
                             caption="Blacksmith"
                             initialValue={blacksmithEnabled}
                             onChange={() => {
-                                dispatch(settings.toggleBlacksmith());
+                                setProfessionSetting(userId, "blacksmith", !blacksmithEnabled, dispatch);
                             }}
                         />
                         <Checkbox
@@ -75,7 +79,7 @@ export default function SettingsModal({ shown, onClose }) {
                             caption="Artisan"
                             initialValue={artisanEnabled}
                             onChange={() => {
-                                dispatch(settings.toggleArtisan());
+                                setProfessionSetting(userId, "artisan", !artisanEnabled, dispatch);
                             }}
                         />
                         <Checkbox
@@ -83,7 +87,7 @@ export default function SettingsModal({ shown, onClose }) {
                             caption="Fisher"
                             initialValue={fisherEnabled}
                             onChange={() => {
-                                dispatch(settings.toggleFisher());
+                                setProfessionSetting(userId, "fisher", !fisherEnabled, dispatch);
                             }}
                         />
                         <Checkbox
@@ -91,7 +95,7 @@ export default function SettingsModal({ shown, onClose }) {
                             caption="Tapper"
                             initialValue={tapperEnabled}
                             onChange={() => {
-                                dispatch(settings.toggleTapper());
+                                setProfessionSetting(userId, "tapper", !tapperEnabled, dispatch);
                             }}
                         />
                         <Checkbox
@@ -99,7 +103,7 @@ export default function SettingsModal({ shown, onClose }) {
                             caption="Angler"
                             initialValue={anglerEnabled}
                             onChange={() => {
-                                dispatch(settings.toggleAngler());
+                                setProfessionSetting(userId, "angler", !anglerEnabled, dispatch);
                             }}
                         />
                     </View>

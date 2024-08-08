@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 7 Aug 2024, 4:20:17 PM
- *  Last update: 8 Aug 2024, 1:20:52 PM
+ *  Last update: 8 Aug 2024, 1:40:33 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { createSlice } from "@reduxjs/toolkit";
@@ -31,46 +31,46 @@ const settingsSlice = createSlice({
             state.professions = professions;
         },
 
-        toggleRancher: (state) => {
-            state.professions.rancher = !state.professions.rancher;
+        setRancher: (state, action) => {
+            state.professions.rancher = action.payload;
         },
 
-        toggleTiller: (state) => {
-            state.professions.tiller = !state.professions.tiller;
+        setTiller: (state, action) => {
+            state.professions.tiller = action.payload;
         },
         
-        toggleArtisan: (state) => {
-            state.professions.artisan = !state.professions.artisan;
+        setArtisan: (state, action) => {
+            state.professions.artisan = action.payload;
         },
         
-        toggleTapper: (state) => {
-            state.professions.tapper = !state.professions.tapper;
+        setTapper: (state, action) => {
+            state.professions.tapper = action.payload;
         },
         
-        toggleGemologist: (state) => {
-            state.professions.gemologist = !state.professions.gemologist;
+        setGemologist: (state, action) => {
+            state.professions.gemologist = action.payload;
         },
         
-        toggleBlacksmith: (state) => {
-            state.professions.blacksmith = !state.professions.blacksmith;
+        setBlacksmith: (state, action) => {
+            state.professions.blacksmith = action.payload;
         },
         
-        toggleFisher: (state) => {
-            state.professions.fisher = !state.professions.fisher;
+        setFisher: (state, action) => {
+            state.professions.fisher = action.payload;
         },
         
-        toggleAngler: (state) => {
-            state.professions.angler = !state.professions.angler;
+        setAngler: (state, action) => {
+            state.professions.angler = action.payload;
         },
     },
 });
 
 export const {
     setSettings,
-    toggleRancher, toggleTiller, toggleArtisan,
-    toggleTapper,
-    toggleGemologist, toggleBlacksmith,
-    toggleFisher, toggleAngler
+    setRancher, setTiller, setArtisan,
+    setTapper,
+    setGemologist, setBlacksmith,
+    setFisher, setAngler
 } = settingsSlice.actions;
 
 export default settingsSlice.reducer;

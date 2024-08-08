@@ -1,15 +1,12 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 7 Aug 2024, 4:51:57 PM
- *  Last update: 8 Aug 2024, 2:26:41 PM
+ *  Last update: 8 Aug 2024, 2:36:40 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
-import { doc, updateDoc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 
 import { db, settingsColl } from "./config";
-
-// TODO: remove hardcoded ID
-import { userId as myId } from "../../includes/variables";
 
 /**
  * Update the setting for a given profession for the given user.
@@ -19,9 +16,6 @@ import { userId as myId } from "../../includes/variables";
  * @returns a boolean representing if the operation was successful
  */
 export async function setProfessionActive(userId, profession, value) {
-    // TODO: remove hardcoded ID
-    userId = myId;
-
     // create data obj
     const data = { professions: {} }
     data.professions[profession] = value;

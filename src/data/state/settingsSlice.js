@@ -1,12 +1,15 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 7 Aug 2024, 4:20:17 PM
- *  Last update: 8 Aug 2024, 1:40:33 PM
+ *  Last update: 8 Aug 2024, 2:36:28 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { createSlice } from "@reduxjs/toolkit";
 
+import { userId } from "../../includes/variables";
+
 const initialState = {
+    userId,     // TODO: remove hardcoded user ID
     professions: {
         rancher: false,
         tiller: false,

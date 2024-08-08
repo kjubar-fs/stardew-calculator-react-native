@@ -1,23 +1,30 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:42:58 PM
- *  Last update: 5 Aug 2024, 8:34:42 PM
+ *  Last update: 8 Aug 2024, 5:27:56 PM
  *  Copyright (c) 2024 Kaleb Jubar
  */
-import { View, Text, TouchableHighlight } from "react-native";
+import { ScrollView, Text, TouchableHighlight } from "react-native";
+
+import { useSelector } from "react-redux";
+
+import ButtonWithIcon from "../../components/ButtonWithIcon";
 
 import globalStyles from "../../styles/structure";
+import styles from "./styles";
 
 export default function CategoryScreen({ navigation }) {
+    const categoryList = useSelector((state) => state.categories);
+
     return (
-        <View style={globalStyles.navContainer}>
-            <Text>Category select screen goes here.</Text>
-            <TouchableHighlight
-                onPress={() => navigation.navigate("ItemList", { category: "Crops", })}
-                underlayColor="#6AE"
-            >
-                <Text style={{ color: "#333" }}>Go to item list</Text>
-            </TouchableHighlight>
-        </View>
+        <ScrollView style={globalStyles.navContainer} contentContainerStyle={styles.container}>
+            {categoryList.map((category) => (
+                <ButtonWithIcon
+                    key={category.id}
+                    onPress={() => navigation.navigate("ItemList", { category: category.displayName, })}
+                    caption={category.displayName}
+                />
+            ))}
+        </ScrollView>
     );
 }

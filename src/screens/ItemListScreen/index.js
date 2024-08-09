@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 7:43:21 PM
- *  Last update: 9 Aug 2024, 10:29:16 AM
+ *  Last update: 9 Aug 2024, 10:35:10 AM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { ScrollView } from "react-native";
@@ -24,7 +24,7 @@ export default function ItemListScreen({ navigation, route }) {
             {itemList.map((item) => (
                 <ButtonWithIcon
                     key={item.id}
-                    onPress={() => navigation.navigate("ItemDetail", { itemName: item.name })}
+                    onPress={() => navigation.navigate("ItemDetail", { itemName: item.name, id: item.id })}
                     caption={item.name}
                 />
             ))}

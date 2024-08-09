@@ -1,7 +1,7 @@
 /*
  *  Author: Kaleb Jubar
  *  Created: 5 Aug 2024, 6:52:06 PM
- *  Last update: 7 Aug 2024, 12:32:49 PM
+ *  Last update: 9 Aug 2024, 10:15:30 AM
  *  Copyright (c) 2024 Kaleb Jubar
  */
 import { StyleSheet, Platform } from "react-native";
@@ -39,6 +39,11 @@ export default StyleSheet.create({
     // global styles
     navContainer: {
         padding: screenPadding,
+    },
+
+    scrollContainer: {
+        paddingBottom: screenPadding + (Platform.OS === "ios" ? screenPadding : gapPadding),
+        gap: gapPadding,
     },
 
     titleH1: {
